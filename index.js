@@ -14,6 +14,8 @@ const APP = express();
 
 APP.use(cors());
 
+APP.set("port", PORT);
+
 const HTTPSERVER = createServer(APP);
 
 const IO = new Server(HTTPSERVER, {

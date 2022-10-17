@@ -18,6 +18,7 @@ dotenv.config();
 var PORT = process.env.PORT || 3001;
 var APP = (0, _express["default"])();
 APP.use((0, _cors["default"])());
+APP.set("port", PORT);
 var HTTPSERVER = (0, _http.createServer)(APP);
 var IO = new _socket.Server(HTTPSERVER, {
   cors: {
