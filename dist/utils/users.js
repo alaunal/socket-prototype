@@ -11,7 +11,7 @@ var users = [];
 var userConnect = function userConnect(id, username, project) {
   var user;
   var checkUser = users.filter(function (user) {
-    return user.id === id && user.project === project;
+    return parseInt(user.id) === id && user.project === project;
   });
   var checkProject = getProjectUsers(project);
   if (checkUser.length < 1) {
@@ -20,7 +20,7 @@ var userConnect = function userConnect(id, username, project) {
       username: username,
       project: project,
       isActive: checkProject.length < 1 ? true : false,
-      time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
+      time: "".concat(new Date(Date.now()).getHours(), ":").concat(new Date(Date.now()).getMinutes(), ":").concat(new Date(Date.now()).getSeconds())
     };
     users.push(user);
   } else {

@@ -3,7 +3,7 @@ const users = [];
 export const userConnect = (id, username, project) => {
     let user;
 
-    const checkUser = users.filter((user) => user.id === id && user.project === project);
+    const checkUser = users.filter((user) => parseInt(user.id) === (id) && user.project === project);
 
     const checkProject = getProjectUsers(project);
 
@@ -13,7 +13,7 @@ export const userConnect = (id, username, project) => {
             username,
             project,
             isActive: checkProject.length < 1 ? true : false,
-            time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes(),
+            time: `${new Date(Date.now()).getHours()}:${new Date(Date.now()).getMinutes()}:${new Date(Date.now()).getSeconds()}`,
         };
 
         users.push(user);

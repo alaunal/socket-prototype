@@ -28,7 +28,7 @@ var IO = new _socket.Server(HTTPSERVER, {
 });
 
 // -- run root page
-APP.get("/", function (res, req) {
+APP.get("/", function (req, res) {
   res.write("<h1>websocket run start on port: ".concat(PORT, "</h1>"));
   res.end();
 });
