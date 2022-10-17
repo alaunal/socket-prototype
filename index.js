@@ -23,6 +23,12 @@ const IO = new Server(HTTPSERVER, {
     },
 });
 
+// -- run root page
+APP.get("/", (res, req) => {
+    res.write(`<h1>websocket run start on port: ${PORT}</h1>`);
+    res.end();
+});
+
 // -- Run when client connects
 
 IO.on("connection", (socket) => {
