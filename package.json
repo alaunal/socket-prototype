@@ -4,8 +4,10 @@
   "description": "prototype of websocket for prime studio",
   "main": "index.js",
   "scripts": {
-    "start": "babel index.js -d dist",
-    "dev": "nodemon --exec npx babel-node index.js"
+    "start": "npm run build && node dist",
+    "build": "babel src -d dist",
+    "restart": "npm run start",
+    "dev": "nodemon --exec npm run restart"
   },
   "keywords": [
     "socket.io",
