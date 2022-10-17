@@ -4,8 +4,8 @@
   "description": "prototype of websocket for prime studio",
   "main": "index.js",
   "scripts": {
-    "start": "node --exec babel-node index.js",
-    "dev": "nodemon --exec babel-node index.js"
+    "build": "babel index.js -d dist",
+    "dev": "nodemon --exec npx babel-node index.js"
   },
   "keywords": [
     "socket.io",
@@ -15,6 +15,9 @@
   ],
   "author": "a.kauniyyah <a.kauniyyah@gojek.com>",
   "license": "ISC",
+  "engines": {
+    "node": "12.22.6"
+  },
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
