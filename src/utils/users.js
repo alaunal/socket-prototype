@@ -3,7 +3,7 @@ const users = [];
 export const userConnect = (id, username, project) => {
     let user;
 
-    const checkUser = users.filter((user) => parseInt(user.id) === (id) && user.project === project);
+    const checkUser = users.filter((user) => parseInt(user.id) === parseInt(id) && user.project === project);
 
     const checkProject = getProjectUsers(project);
 
